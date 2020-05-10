@@ -1,0 +1,59 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <H1>Heading</H1>
+    <input id="myVal">
+    <button onClick=myFunction()>Click Me</button>
+    <br>
+    <br>
+    <p id="myId"></p>
+</body>
+
+<script>
+    function LetterChanges(str) {
+        var allLetters = "abcdefghijklmnopqrstuvwxyz";
+        var myString = "";
+        var str1 = str.split('');
+        console.log("str1 :" + str1);
+
+        str1.forEach(function (ele, ind, arr) {
+            indexOfStr = allLetters.indexOf(ele.toLowerCase());
+            if (indexOfStr < 0) {
+                myString = myString.concat(ele);
+            } else if (ele == "z") {
+                myString = myString.concat("a");
+            } else if (!allLetters.includes(ele.toLowerCase())) {
+                myString = myString.concat(ele);
+            } else {
+                myString = myString.concat(allLetters[indexOfStr + 1]);
+            }
+        })
+        myString1 = myString.split('');
+        myString1.forEach(function (ele, ind) {
+            if (myf(ele)) {
+                myString1[ind] = myString1[ind].toUpperCase();
+            }
+        });
+        myString1 = myString1.join("");
+        console.log("myString :" + myString1);
+        return myString1;
+    }
+
+    function myf(element) {
+        var vowels = "aeiou";
+        var bol = false;
+        vowels.split('').forEach(function (ele) {
+            if (ele === element) {
+                bol = true;
+            }
+        });
+        return bol;
+    }
+    console.log("hello " + LetterChanges("hello world"));
+</script>
+
+</html>

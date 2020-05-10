@@ -1,0 +1,36 @@
+<html>
+
+<head>
+   
+</head>
+
+<body>
+    <H1>Heading</H1>
+    <input id="myVal">
+    <button onClick=myFunction()>Click Me</button>
+</body>
+
+<script>
+    function myFunction() {
+        var myValue = document.getElementById("myVal").value;
+        console.log(myValue);
+        var myArray = [];
+        if (myValue <= 0) {
+            alert("Please use number greater than 0")
+        } else {
+            for (var i = 0; i <= myValue; i++) {
+                if (myValue % i == 0) {
+                    myArray.push(i);
+                }
+            }
+        }
+        if (myArray.length > 2) {
+            alert(myValue + " is not a prime Number");
+        } else {
+            alert(myValue + " is a prime number");
+        }
+        console.log(myArray);
+
+    }
+</script>
+</html>
